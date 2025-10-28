@@ -21,4 +21,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('senior-citizen', SeniorCitizenController::class)->middleware('auth');
-require __DIR__.'/auth.php';
+Route::get('/senior-citizen/qr-profile/{seniorCitizen}', [SeniorCitizenController::class, 'showQrProfile'])
+    ->name('senior-citizen.qr-profile');
+
+require __DIR__ . '/auth.php';

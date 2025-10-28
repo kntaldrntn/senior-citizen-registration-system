@@ -56,8 +56,9 @@
             </div>
         </main>
 
-        @include('seniorcitizen.add-edit-modal')
         @include('seniorcitizen.view-modal')
+        @include('seniorcitizen.add-edit-modal')
+        @include('seniorcitizen.qr-modal')
         @include('seniorcitizen.delete-modal')
 
         @include('partials.scripts')

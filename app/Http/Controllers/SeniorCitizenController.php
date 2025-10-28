@@ -68,4 +68,9 @@ class SeniorCitizenController extends Controller
         $seniorCitizen->delete();
         return redirect()->route('senior-citizen.index')->with('success', 'Senior Citizen deleted successfully.');
     }
+        public function showQrProfile(SeniorCitizen $seniorCitizen)
+    {
+        // We just return a new view, passing the citizen data
+        return view('seniorcitizen.qr-profile', compact('seniorCitizen'));
+    }
 }

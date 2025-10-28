@@ -75,6 +75,24 @@
                 
                 this.deleteModalOpen = true;
             },
+            openQrModal(id, name) {
+                this.qrCodeName = name; 
+                this.qrModalOpen = true;
+                this.$nextTick(() => {
+                    const qrElement = document.getElementById('qr-code-display');
+                    qrElement.innerHTML = ''; 
+
+                    const qrUrl = `{{ url('/') }}/senior-citizen/qr-profile/${id}`;
+                    
+                    new QRCode(qrElement, {
+                        text: qrUrl,
+                        width: 250,
+                        height: 250,
+                        colorDark : "#000000",
+                        colorLight : "#ffffff",
+                    });
+                });
+            },
 
             // --- Data Fetching Functions ---
             async fetchCitizenDetails(id) {

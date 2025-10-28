@@ -57,6 +57,12 @@
                                 <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10ZM14 10a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" clip-rule="evenodd" />
                             </svg>
                         </button>
+
+                        <button @click="openQrModal({{ $citizen->id }}, '{{ addslashes($citizen->name) }}')" class="text-green-600 hover:text-green-800 p-1 ml-2" title="Generate QR Code">
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M1.5 4.5A1.5 1.5 0 0 1 3 3h3a1.5 1.5 0 0 1 1.5 1.5v3A1.5 1.5 0 0 1 6 9H3A1.5 1.5 0 0 1 1.5 7.5v-3ZM3 4.5v3h3v-3H3Zm1.5 9A1.5 1.5 0 0 1 3 12h3a1.5 1.5 0 0 1 1.5 1.5v3A1.5 1.5 0 0 1 6 18H3a1.5 1.5 0 0 1-1.5-1.5v-3ZM3 13.5v3h3v-3H3Zm9-9A1.5 1.5 0 0 1 10.5 3h3A1.5 1.5 0 0 1 15 4.5v3A1.5 1.5 0 0 1 13.5 9h-3A1.5 1.5 0 0 1 9 7.5v-3ZM10.5 4.5v3h3v-3h-3ZM9 10.5a1.5 1.5 0 0 1 1.5 1.5v1.5h1.5a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 16.5v-3a1.5 1.5 0 0 1 1.5-1.5h1.5v-1.5A1.5 1.5 0 0 1 9 10.5Zm1.5 1.5v1.5h1.5v1.5h-1.5v1.5h-1.5v-3h3Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
                         
                         <button @click="openEditModal({{ $citizen->id }})" class="text-blue-600 hover:text-blue-800 p-1 ml-2" title="Edit">
                             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -65,7 +71,7 @@
                         </button>
                         <button @click="openDeleteModal({{ $citizen->id }})" class="text-red-600 hover:text-red-800 p-1 ml-2" title="Delete">
                             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M8.75 1A2.75 2.75 0 0 0 6 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 0 0-.7.707v1.262c0 .261.12.508.33.66l2.1 1.291c.12.074.253.11.388.11h11.196c.135 0 .268-.036.388-.11l2.1-1.291a.75.75 0 0 0 .33-.66V5.198a.75.75 0 0 0-.7-.707A50.09 50.09 0 0 0 14 4.193v-.443A2.75 2.75 0 0 0 11.25 1h-2.5ZM10 4c.84 0 1.5.66 1.5 1.5V5h-3v-.5C8.5 4.66 9.16 4 10 4ZM6.03 7.5a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0v-6Zm3.72 0a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0v-6Zm3.75 0a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0v-6Z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M6 7a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Zm4 0a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Zm5-3h-3.5l-.5-.5h-3l-.5.5H4a1 1 0 1 0 0 2h12a1 1 0 1 0 0-2ZM5 6h10l-.8 10.6A2 2 0 0 1 12.2 18H7.8a2 2 0 0 1-1.99-1.4L5 6Z" clip-rule="evenodd" />
                             </svg>
                         </button>
                     </td>
