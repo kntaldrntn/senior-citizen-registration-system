@@ -59,7 +59,7 @@
 
             async openEditModal(id) {
                 this.selectedCitizenId = id;
-                
+
                 // Only fetch new data if we are NOT reloading from a validation error
                 @if (!$errors->any())
                     await this.fetchEditData(id);
@@ -70,26 +70,26 @@
 
             openDeleteModal(id) {
                 this.selectedCitizenId = id;
-            
+
                 this.deleteFormAction = `/senior-citizen/${id}`;
-                
+
                 this.deleteModalOpen = true;
             },
             openQrModal(id, name) {
-                this.qrCodeName = name; 
+                this.qrCodeName = name;
                 this.qrModalOpen = true;
                 this.$nextTick(() => {
                     const qrElement = document.getElementById('qr-code-display');
-                    qrElement.innerHTML = ''; 
+                    qrElement.innerHTML = '';
 
                     const qrUrl = `{{ url('/') }}/senior-citizen/qr-profile/${id}`;
-                    
+
                     new QRCode(qrElement, {
                         text: qrUrl,
                         width: 250,
                         height: 250,
-                        colorDark : "#000000",
-                        colorLight : "#ffffff",
+                        colorDark: "#000000",
+                        colorLight: "#ffffff",
                     });
                 });
             },

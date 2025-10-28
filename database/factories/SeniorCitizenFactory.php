@@ -23,7 +23,7 @@ class SeniorCitizenFactory extends Factory
             'address' => fake()->address(),
             'email' => fake()->unique()->safeEmail(),
             'birth_date' => fake()->date(),
-            'photo_image' => fake()->imageUrl(),
+            // 'photo_image' => fake()->imageUrl(),
         ];
     }
 }
